@@ -16,6 +16,8 @@ With `go install`:
 go install github.com/UltiRequiem/yamlfmt@latest
 ```
 
+Make sure your `$PATH` includes the `$GOPATH/bin` so this command can be used anywhere.
+
 You can also use the binaries from
 [releases](https://github.com/UltiRequiem/yamlfmt/releases).
 
@@ -63,4 +65,4 @@ please open a pull requests or issue with the information.
 
 #### License
 
-This project is licensed under the [MIT license](./LICENSE.md)
+This project is licensed under the [MIT license](./LICENSE.md).
