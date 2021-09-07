@@ -6,8 +6,11 @@
 ![CodeQL](https://github.com/UltiRequiem/yamlfmt/workflows/CodeQL/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/yamlfmt)](https://goreportcard.com/report/github.com/UltiRequiem/yamlfmt)
 
+A simple and extensible [yaml](https://yaml.org) formatter.
 
-### Usage
+## Installation
+
+## Usage
 
 - To format one or more files and write to stdout:
 
@@ -42,3 +45,11 @@ Put this somewhere in your configuration:
 ```viml
 au FileType yaml let &l:formatprg= "yamlfmt /dev/stdin"
 ```
+
+It can Probably integrate with others editors easily but I only use Neovim.
+If you know how to integrate it with some other editor,
+please open a pull requests or issue with the information.
+
+#### License
+
+This project is licensed under the[MIT license](./LICENSE.md)
