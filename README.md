@@ -10,11 +10,14 @@ A simple and extensible [yaml](https://yaml.org) formatter.
 
 ## Installation
 
-With `go Install`:
+With `go install`:
 
 ```bash
 go install github.com/UltiRequiem/yamlfmt@latest
 ```
+
+You can also use the binaries from
+[releases](https://github.com/UltiRequiem/yamlfmt/releases).
 
 ## Usage
 
@@ -29,6 +32,8 @@ go install github.com/UltiRequiem/yamlfmt@latest
   ```bash
   yamlfmt -w a.yaml b.yaml c.yaml
   ```
+
+  If you want to log the files that have been formatted, you can use the `-l` flag also.
 
 - To format stdin and write to stdout:
 
