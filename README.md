@@ -10,6 +10,13 @@ A simple and extensible [yaml](https://yaml.org) formatter.
 
 ## Installation
 
+With Go Install:
+
+```bash
+go install github.com/UltiRequiem/yamlfmt@latest
+```
+
+
 ## Usage
 
 - To format one or more files and write to stdout:
@@ -52,4 +59,4 @@ please open a pull requests or issue with the information.
 
 #### License
 
-This project is licensed under the[MIT license](./LICENSE.md)
+This project is licensed under the [MIT license](./LICENSE.md)
