@@ -49,6 +49,20 @@ You can also use the binaries from
   cat a.yaml | yamlfmt > b.yaml
   ```
 
+- To format every file in your current directory and subdirectorys:
+
+  - Using `find`:
+
+    ```bash
+    yamlfmt -w $(find -name "*.yaml")
+    ```
+
+  - Using `fd`:
+
+    ```bash
+    yamlfmt -w $(fd -H -e yaml)
+    ```
+
 ### Editor Integration
 
 - Neovim / Vim
