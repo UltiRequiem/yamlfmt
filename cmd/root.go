@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// yamlfmt entry point
 func Init() {
 	overwrite, indent, logFiles, multipleArgs, files := getParams()
 
