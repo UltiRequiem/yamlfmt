@@ -1,18 +1,18 @@
 package cmd
 
 import (
-	"fmt"
+	"log"
 	"os"
 )
 
 func Init() {
-	overwrite, indent, log, multipleArgs, files := getParams()
+	overwrite, indent, logFiles, multipleArgs, files := getParams()
 
 	if multipleArgs {
 		for _, file := range files {
 			formatFile(file, *indent, *overwrite)
-			if log {
-				fmt.Printf("%s formatted!\n", file)
+			if logFiles {
+				log.Printf("%s formatted!\n", file)
 			}
 		}
 	} else {
