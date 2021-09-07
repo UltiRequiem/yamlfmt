@@ -7,16 +7,16 @@ on:
     branches: [master]
 
 jobs:
-  build:    
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: ["1.14", "1.13"]
+        go: ["1.17"]
     name: Go ${{ matrix.go }} sample
     steps:
       - uses: actions/checkout@v2
       - name: Setup go
         uses: actions/setup-go@v2
         with:
-          go-version: ${{ matrix.go }}  
+          go-version: ${{ matrix.go }}
       - run: go build main.go
