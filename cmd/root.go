@@ -10,12 +10,21 @@ func Init() {
 	overwrite, indent, logFiles, multipleArgs, files := getParams()
 
 	if multipleArgs {
+		channel := make(chan string)
+
 		for _, file := range files {
-			formatFile(file, *indent, *overwrite)
-			if logFiles {
-				log.Printf("%s formatted!\n", file)
-			}
+			go formatFile(file, *indent, *overwrite, channel)
 		}
+
+		for i := 0; i < len(files); i++ {
+			logFile := <-channel
+
+			if logFiles {
+				log.Print(logFile)
+			}
+
+		}
+
 	} else {
 		formatStream(os.Stdin, os.Stdout, *indent)
 	}

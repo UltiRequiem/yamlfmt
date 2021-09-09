@@ -22,7 +22,7 @@ func getParams() (*bool, *int, bool, bool, []string) {
 
 }
 
-func formatFile(file string, indent int, overwrite bool) {
+func formatFile(file string, indent int, overwrite bool, channel chan string) {
 	r, err := os.Open(file)
 
 	defer r.Close()
@@ -40,6 +40,8 @@ func formatFile(file string, indent int, overwrite bool) {
 	if e := dumpStream(&out, file, overwrite); e != nil {
 		log.Fatalf("Cannot overwrite %s: '%s'", file, e)
 	}
+
+	channel <- fmt.Sprintf("%s formatted!", file)
 }
 
 func formatStream(r io.Reader, out io.Writer, indent int) error {
