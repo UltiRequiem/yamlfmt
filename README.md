@@ -10,8 +10,6 @@ A simple and extensible [yaml](https://yaml.org) formatter.
 
 ## Installation
 
-With `go install`:
-
 ```bash
 go install github.com/UltiRequiem/yamlfmt@latest
 ```
