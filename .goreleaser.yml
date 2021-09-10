@@ -58,7 +58,7 @@ brews:
       name: "Eliaz Bobadilla"  
       email: "eliaz.bobadilla@gmail.com"
       homepage: "https://github/UltiRequiem"
-    description: "Easily format yaml files on terminal or your editor"
+      description: "Easily format yaml files on terminal or your editor"
 
 signs:
   - artifacts: checksum
