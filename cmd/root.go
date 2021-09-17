@@ -12,15 +12,17 @@ func Init() {
 	if multipleArgs {
 		channel := make(chan string)
 
+                // Send All Gophers
 		for _, file := range files {
-			go yamlfmt.FormatFile(file, *indent, *overwrite, channel)
+			go yamlfmt.FormatFile(file, indent, overwrite, channel)
 		}
 
+                // Call All Gophers
 		for i := 0; i < len(files); i++ {
-			logFile := <-channel
+			message := <-channel
 
 			if logFiles {
-				log.Print(logFile)
+				log.Print(message)
 			}
 
 		}
@@ -28,5 +30,5 @@ func Init() {
 		return
 	}
 
-	yamlfmt.FormatStream(os.Stdin, os.Stdout, *indent)
+	yamlfmt.FormatStream(os.Stdin, os.Stdout, indent)
 }
