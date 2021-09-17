@@ -1,8 +1,7 @@
-package cmd
+package yamlfmt
 
 import (
 	"bytes"
-	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -11,18 +10,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-func getParams() (*bool, *int, bool, bool, []string) {
-	overwrite := flag.Bool("w", false, "Overwrite the input file")
-	indent := flag.Int("indent", 2, "Default indent")
-	log := flag.Bool("l", false, "Log when a file is formatted")
-
-	flag.Parse()
-
-	return overwrite, indent, *log, flag.NArg() > 0, flag.Args()
-
-}
-
-func formatFile(file string, indent int, overwrite bool, channel chan string) {
+func FormatFile(file string, indent int, overwrite bool, channel chan string) {
 	r, err := os.Open(file)
 
 	defer r.Close()
@@ -33,18 +21,18 @@ func formatFile(file string, indent int, overwrite bool, channel chan string) {
 
 	var out bytes.Buffer
 
-	if err := formatStream(r, &out, indent); err != nil {
+	if err := FormatStream(r, &out, indent); err != nil {
 		log.Fatalf("Failed formatting YAML stream: '%s'", err)
 	}
 
-	if e := dumpStream(&out, file, overwrite); e != nil {
+	if e := DumpStream(&out, file, overwrite); e != nil {
 		log.Fatalf("Cannot overwrite %s: '%s'", file, e)
 	}
 
 	channel <- fmt.Sprintf("%s formatted!", file)
 }
 
-func formatStream(r io.Reader, out io.Writer, indent int) error {
+func FormatStream(r io.Reader, out io.Writer, indent int) error {
 
 	d := yaml.NewDecoder(r)
 	in := yaml.Node{}
@@ -70,7 +58,7 @@ func formatStream(r io.Reader, out io.Writer, indent int) error {
 	return nil
 }
 
-func dumpStream(out *bytes.Buffer, f string, overwrite bool) error {
+func DumpStream(out *bytes.Buffer, f string, overwrite bool) error {
 	if overwrite {
 		return os.WriteFile(f, out.Bytes(), 0744)
 	}

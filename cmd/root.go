@@ -1,11 +1,11 @@
 package cmd
 
 import (
+	"github.com/UltiRequiem/yamlfmt/pkg"
 	"log"
 	"os"
 )
 
-// yamlfmt entry point
 func Init() {
 	overwrite, indent, logFiles, multipleArgs, files := getParams()
 
@@ -13,7 +13,7 @@ func Init() {
 		channel := make(chan string)
 
 		for _, file := range files {
-			go formatFile(file, *indent, *overwrite, channel)
+			go yamlfmt.FormatFile(file, *indent, *overwrite, channel)
 		}
 
 		for i := 0; i < len(files); i++ {
@@ -25,7 +25,8 @@ func Init() {
 
 		}
 
-	} else {
-		formatStream(os.Stdin, os.Stdout, *indent)
+		return
 	}
+
+	yamlfmt.FormatStream(os.Stdin, os.Stdout, *indent)
 }
