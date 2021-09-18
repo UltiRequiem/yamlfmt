@@ -1,8 +1,6 @@
 package cmd
 
-import (
-	"flag"
-)
+import "flag"
 
 func getParams() (bool, int, bool, bool, []string) {
 	overwrite := flag.Bool("w", false, "Overwrite the input file")
@@ -12,5 +10,4 @@ func getParams() (bool, int, bool, bool, []string) {
 	flag.Parse()
 
 	return *overwrite, *indent, *log, flag.NArg() > 0, flag.Args()
-
 }

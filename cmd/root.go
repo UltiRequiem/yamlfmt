@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/UltiRequiem/yamlfmt/pkg"
+	. "github.com/UltiRequiem/yamlfmt/pkg"
 	"log"
 	"os"
 )
@@ -12,12 +12,12 @@ func Init() {
 	if multipleArgs {
 		channel := make(chan string)
 
-                // Send All Gophers
+		// Send All Gophers
 		for _, file := range files {
-			go yamlfmt.FormatFile(file, indent, overwrite, channel)
+			go FormatFile(file, indent, overwrite, channel)
 		}
 
-                // Call All Gophers
+		// Call All Gophers
 		for i := 0; i < len(files); i++ {
 			message := <-channel
 
@@ -30,5 +30,5 @@ func Init() {
 		return
 	}
 
-	yamlfmt.FormatStream(os.Stdin, os.Stdout, indent)
+	FormatStream(os.Stdin, os.Stdout, indent)
 }
