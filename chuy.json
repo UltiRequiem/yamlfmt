@@ -1,3 +1,0 @@
-{
-  "run": "go run main.go -w -l $(fd -H -e yaml)"
-}

@@ -35,7 +35,22 @@ func FormatFile(file string, indent int, overwrite bool, channel chan string) {
 func FormatStream(r io.Reader, out io.Writer, indent int) error {
 
 	d := yaml.NewDecoder(r)
-	in := yaml.Node{}
+
+	in := yaml.Node{
+		Kind:        0,
+		Style:       0,
+		Tag:         "",
+		Value:       "",
+		Anchor:      "",
+		Alias:       &yaml.Node{},
+		Content:     []*yaml.Node{},
+		HeadComment: "",
+		LineComment: "",
+		FootComment: "",
+		Line:        0,
+		Column:      0,
+	}
+
 	err := d.Decode(&in)
 
 	for err == nil {

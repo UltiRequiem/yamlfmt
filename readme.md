@@ -1,9 +1,5 @@
 # YAMLFMT
 
-[![GitMoji](https://img.shields.io/badge/Gitmoji-%F0%9F%8E%A8%20-FFDD67.svg)](https://gitmoji.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![Lines Of Code](https://img.shields.io/tokei/lines/github.com/UltiRequiem/yamlfmt?color=blue&label=Total%20Lines)
-![CodeQL](https://github.com/UltiRequiem/yamlfmt/workflows/CodeQL/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/yamlfmt)](https://goreportcard.com/report/github.com/UltiRequiem/yamlfmt)
 
 A simple and extensible [yaml](https://yaml.org) formatter.
@@ -13,8 +9,6 @@ A simple and extensible [yaml](https://yaml.org) formatter.
 ```bash
 go install github.com/UltiRequiem/yamlfmt@latest
 ```
-
-Make sure your `$PATH` includes the `$GOPATH/bin` so this command can be used anywhere.
 
 You can also use the binaries from
 [releases](https://github.com/UltiRequiem/yamlfmt/releases).
@@ -33,7 +27,8 @@ You can also use the binaries from
   yamlfmt -w a.yaml b.yaml c.yaml
   ```
 
-  If you want to log the files that have been formatted, you can use the `-l` flag also.
+  If you want to log the files that have been formatted, you can use the `-l`
+  flag also.
 
 - To format stdin and write to stdout:
 
@@ -47,7 +42,7 @@ You can also use the binaries from
   cat a.yaml | yamlfmt > b.yaml
   ```
 
-- To format every file in your current directory and subdirectorys:
+- To format every file in your current directory and subdirectories:
 
   - Using `find`:
 
@@ -61,20 +56,38 @@ You can also use the binaries from
     yamlfmt -w $(fd -H -e yaml)
     ```
 
-### Editor Integration
+## Editor Integration
 
-- Neovim / Vim
-
-Put this somewhere in your configuration:
+### Neovim / Vim
 
 ```viml
 au FileType yaml let &l:formatprg= "yamlfmt /dev/stdin"
 ```
 
-It can Probably integrate with others editors easily but I only use Neovim.
-If you know how to integrate it with some other editor,
-please open a pull requests or issue with the information.
+It can Probably integrate with others editors easily but I only use Neovim. If
+you know how to integrate it with some other editor, please open a pull requests
+or issue with the information.
 
-#### License
+## Authors
 
-This project is licensed under the [MIT license](./LICENSE.md).
+[Eliaz Bobadilla](https://ultirequiem.com) - Creator and Maintainer 💪
+
+See also the full list of
+[contributors](https://github.com/UltiRequiem/yamlfmt/contributors) who
+participated in this project ✨
+
+## Support
+
+Open an Issue, I will check it a soon as possible 👀
+
+If you want to hurry me up a bit
+[send me a tweet](https://twitter.com/UltiRequiem) 😆
+
+Consider [supporting me on Patreon](https://patreon.com/UltiRequiem) if you like
+my work 🙏
+
+Don't forget to start the repo ⭐
+
+## Licence
+
+Licensed under the MIT License 📄
