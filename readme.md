@@ -1,6 +1,7 @@
 # YAMLFMT
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/UltiRequiem/yamlfmt)](https://goreportcard.com/report/github.com/UltiRequiem/yamlfmt)
+[![Go Reference](https://pkg.go.dev/badge/github.com/UltiRequiem/yamlfmt/pkg.svg)](https://pkg.go.dev/github.com/UltiRequiem/yamlfmt/pkg)
 
 A simple and extensible [yaml](https://yaml.org) formatter.
 
