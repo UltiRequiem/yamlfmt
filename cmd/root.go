@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// starts the program
 func Init() {
 	overwrite, indent, logFiles, multipleArgs, files := getParams()
 
