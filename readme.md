@@ -5,6 +5,8 @@
 
 A simple and extensible [yaml](https://yaml.org) formatter.
 
+Code coverage: https://ulti.js.org/yamlfmt
+
 ## Installation
 
 ```bash
@@ -71,23 +73,13 @@ or issue with the information.
 
 ## Authors
 
-[Eliaz Bobadilla](https://ultirequiem.com) - Creator and Maintainer 💪
+[Eliaz Bobadilla](https://ultirequiem.xyz) - Creator and Maintainer 💪
+
+Big thanks to @Antoineio for helping with the tests and CI! 🎉
 
 See also the full list of
 [contributors](https://github.com/UltiRequiem/yamlfmt/contributors) who
 participated in this project ✨
-
-## Support
-
-Open an Issue, I will check it a soon as possible 👀
-
-If you want to hurry me up a bit
-[send me a tweet](https://twitter.com/UltiRequiem) 😆
-
-Consider [supporting me on Patreon](https://patreon.com/UltiRequiem) if you like
-my work 🙏
-
-Don't forget to star the repo ⭐
 
 ## Licence
 
